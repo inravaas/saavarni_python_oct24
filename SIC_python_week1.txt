@@ -1,0 +1,237 @@
+Program 6: To check if the input number is composite number
+Approach:
+1. Read input number using input().
+2. Check if num is greater than 1.
+3. Find factors. Run a for loop ranging from 2 to the num entered. Increment count everytime num%i==0.
+4. Number is prime if count == 2(1 and the number itself)
+	Else it is a composite number
+5. If the number entered is either 0 or 1, we say that the number is neither prime nor composite number.
+6. Print the result.
+
+Code:
+input_number = int(input("Enter a number:"))
+count = 0
+if input_number > 1:
+    for i in range(1,input_number+1):
+        if (input_number % i) == 0:
+            count += 1
+    if count == 2:
+        print(f'{input_number} is not a composite number')
+    else:
+        print(f'{input_number} is a composite number')
+
+elif input_number == 0 or 1:
+    print(f'{input_number} is neither prime nor composite number')
+else:
+    print("Invalid Input")
+	
+-------------------------------------------------------------------
+
+Program 7: Check if the character is only a alpha-numeric
+Approach: 
+Use isalnum() function to check if it alpha-numeric
+
+Code:
+input_char = input("Enter a character: ")
+if input_char.isalnum() == True:
+    print(f"{input_char} is an alpha-numeric")
+else:
+    print(f"{input_char} is not alpha-numeric")
+	
+-------------------------------------------------------------------
+
+Program 8: Print the Math table of a number for multiples upto 20
+Code: 
+input_number = int(input('Enter a number to print its Math table: '))
+
+for i in range(1, 21):
+    #print(input_number, '*', i, '=', input_number * i)
+    print('%2d * %02d = %03d'%(input_number, i, input_number*i))
+
+--------------------------------------------------------------------
+
+Program 9: Accept a number and find sum of digits of the number
+Approach: 
+1. Accept a number
+2. Initialise sum to 0
+3. Run a while loop until num!=0
+4. In the loop extract the last digit by num%10 and add it to sum; then remove the last digit from the num by num/10; run until num!=0
+5. Return sum
+
+Code:
+input_number = int(input("Enter a number to find it's sum of digits: "))
+num = input_number
+sum = 0
+while(num != 0):
+    sum = sum + (num % 10)  #Adds the last digit to the sum
+    num = int(num / 10) #Removes the last digit from the input_number
+    
+print(f'The sum of digits of {input_number} is {sum}')
+
+-----------------------------------------------------------------------
+
+Program 10: Accept a number and find count the number of digits in it.
+Approach:
+1. Accept a number
+2. Initialise sum to 0
+3. Perform num//10 to access number lsb, and increment count by 1
+4. run the above operation in loop until num != 0
+
+Code: 
+input_num = int(input("Enter a number to find the number of digits in it: "))
+count = 0
+num = input_num
+while (num != 0):
+    num = num // 10
+    count = count + 1
+print(f'There are {count} digits in {input_num}')
+
+--------------------------------------------------------------------------
+
+Program 11: Accept a number and find biggest/smallest digit in the number
+Approach:
+1. Convert the input number to a string
+2. Find the biggest/smallest digit by comparing the ASCII value of each character using min and max function
+ 
+Code:
+
+input_num = int(input("Enter a number to find it's smallest and biggest digit: "))
+s=str(input_num) 
+print("The biggest digit in the number is: ",max(s)) 
+print("The samllest digit in the number is: ",min(s)) 
+
+OR
+num = int(input("Enter a number:"))
+num_list = []
+count = {}
+while num != 0:
+    digit = num % 10
+    num = num // 10
+    num_list.append(digit)
+i = len(num_list)
+sorted_num_list = sorted(num_list)
+print("The smallest digit in the number is: ",sorted_num_list[0])
+print("The largest digit in the number is: ",sorted_num_list[i-1])
+
+-------------------------------------------------------------------------
+
+Program 12: Find sum of Even/Odd digits in the number
+Approach: 
+1. Accept an input_number and reverse the number
+2. The first digit of a number so it is odd positioned digit.
+The next digit will be even positioned digit, and we can take the sum in alternating turns.
+
+Code:
+input_number = int(input("Enter a number: "))
+reverse_num = 0
+
+#for reversing the input_number
+while (input_number != 0): 
+	reverse_num = (reverse_num * 10) + (input_number % 10) 
+	input_number //= 10
+
+sum_odd = 0
+sum_even = 0
+i = 1
+while (reverse_num != 0):    #i is used for pointing each digit in the number
+	if (i % 2 == 0): 
+		sum_even += reverse_num % 10
+	else: 
+		sum_odd += reverse_num % 10
+	reverse_num //= 10
+	i += 1
+
+print("Sum odd =", sum_odd) 
+print("Sum even =", sum_even) 
+
+------------------------------------------------------------------------------
+
+Program 13: Find the frequency of a digit in the number
+Code:
+
+number = input("Enter a number to find the frequency of each digit in it:")
+count = {}
+for w in number:
+    if w in count:
+        count[w] += 1
+    else:
+        count[w] = 1
+print ("Digit Count:")
+for w, c in count.items():
+    print(f"{w}: {c}")
+
+--------------------------------------------------------------------------------
+
+Program 14: Find sum of Odd placed Even digits in the number
+Code:
+
+--------------------------------------------------------------------------------
+
+Program 15: Find 2nd smallest digit in the number
+Code:
+num = int(input("Enter a number:"))
+num_list = []
+count = {}
+while num != 0:
+    digit = num % 10
+    num = num // 10
+    num_list.append(digit)
+
+sorted_num_list = sorted(num_list)
+print("The second smallest digit in the number is: ",sorted_num_list[1])
+
+---------------------------------------------------------------------------------
+
+16.Accept a number from user and find her lucky digit, where the lucky digit is found by finding sum of the digits of the number until a sigle digit number is reached. Thus if the sum is not a single digit number, apply the logic of finding sum of the digits on it.
+input_number = int(input('Enter a number to find your lucky digit: '))
+
+sum_of_digits = 0
+temp_number = input_number
+
+while temp_number > 0:
+    remainder_digit = temp_number % 10
+    temp_number = temp_number // 10
+    sum_of_digits += remainder_digit
+    if temp_number == 0 and sum_of_digits >= 10:
+        temp_number = sum_of_digits
+        sum_of_digits = 0
+print(f'Your lucky digit is {sum_of_digits}')
+
+--------------------------------------------------------------------------
+
+Program 17 - To check if a number is Perfect Square
+Code: 
+import math
+input_number = float(input("Enter the number"))
+root = math.sqrt(input_number)
+print("Root = ",root)
+if (root * root)==input_number:
+    print("{} is a perfect square".format(input_number))
+else:
+    print("{} is not a perfect square".format(input_number))
+--------------------------------------------------------------------------
+
+
+
+try:
+	connection = connect_db()
+	my_cursor = connection.cursor()
+	my_cursor.execute(query)
+	connection.commit()
+	//
+	my_cursor.close()
+	disconnect_db(connection)
+except pymysq.err.DatabaseError as e:
+	print(e)
+	print('Some error occured while inserting the row')
+except:
+	print('Database disconnection failed')
+	
+	
+5 CRUD Operations
+1. C- Creating/ Inserting the row into the table
+2. R- Read/ Retrieve (one row, or all rows) one row - searches with ID/key so excatly one or zero rows are retirieved
+3. U- Update one row
+4. D- Delete row
+
+CLAUDE FOR CODETANTRA

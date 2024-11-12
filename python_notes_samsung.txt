@@ -1,0 +1,72 @@
+Assignment questions 22/10/2024
+
+1. p5- Check if the year is Leap year
+2. p6- Check if the input digit is Composite number
+3. p7- Check if the charactr is only a alpha-numeric character
+
+Examples of funtions:
+print()
+len()
+sorted()
+max()
+min()
+
+
+When to call a function as method:
+obj.method()
+str.upper()
+list.sort()
+
+The range() function:
+range(end_value)
+range(start_value, end_value)
+range(start_value, end_value, increment)
+
+*** In python we do not have the concept of Function overloading
+
+9. Accept a number and find sum of digits of the number
+10. Accept a number and find count the number of digits in it
+11. Accept a number and find biggers/smallest digit in the number
+12. Find sum of Even/Odd digits in the number
+13. Find the frequency of a digit in the number
+
+14. Find sum of Odd placed Even digits in the number
+15. Find 2nd smallest digit in the number
+16. Accept a number from user and find her lucky digit, where the lucky digit is found by finding sum of the digits of the number until a single digit number is reached. Thus if the sum is not a single digit number, apply the logic of finding sum of the digits on it.
+
+
+TRY learning Modern C++ = C++ of version 11/14
+docs.python.org
+docs.oracle.org
+microsoft msbn
+ibm.com - for c
+mit open universities - yt channel
+cdac 
+
+
+what is always must be implicit
+meta data = data about the data
+strings are immutable
+
+right open = includes the start and the end parameters
+
+Ctrl+Shift+u => UPPERCASE
+Ctrl+u => lowercase
+Shift+F3
+
+os.mkdir -> make directories = create new dicrectory = the mkdir calls the OS API key responsible for creating a dir, but the mkdir itself doesn't create
+
+<reference> = new <object>
+reference should always be <= object
+
+
+restful endpoints:
+1. POST - inserting rows
+2. GET - to read (all the rows); GET/id - returns 0 or 1 row
+3. PUT - Update = PUT/id
+4. DELETE - delete 1 row = DELETE/id
+
+install stand alone application - postman
+this and thunder client are a backend testing application
+
+
